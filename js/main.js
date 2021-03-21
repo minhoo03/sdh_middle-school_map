@@ -21,44 +21,51 @@ let clusterer = new kakao.maps.MarkerClusterer({
 const setMarker_data = (address, address_name) => {
 
 
-    let positions = [
-        {
-            title: '서울 디지텍 고등학교', 
-            latlng: new kakao.maps.LatLng(37.538921, 126.990606)
-        }
-    ];
+    let data = {
+            "positions": [
+            {
+                title: '서울 디지텍 고등학교', 
+                lat: 37.538921,
+                lng: 126.990606
+            }
+        ]
+    }
 
 
 
     let geocoder = new kakao.maps.services.Geocoder();
 
     geocoder.addressSearch(address, function(result, status) {
-        // console.log('1',result[0].x)
+    
+        data.positions.push({
+            title: address_name,
+            lat: result[0].y,
+            lng: result[0].x
+            // latlng: coords
+        })
 
-            let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-            // console.log('2',coords)
-            positions.push({
-                title: address_name,
-                latlng: coords
-            })
 
-            for (let i = 0; i < positions.length; i ++) {
+        var markers = data.positions.map(function(address) {
+            return new kakao.maps.Marker({
+                position : new kakao.maps.LatLng(address.lat, address.lng)
+            });
+        });
 
-                // 마커를 생성합니다
-                let marker = new kakao.maps.Marker({
-                    map: map, // 마커를 표시할 지도
-                    position: positions[i].latlng, // 마커를 표시할 위치
-                    title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-                });
-        
-                // 마커가 지도 위에 표시되도록 설정합니다
-                marker.setMap(map);
-            }
+        clusterer.addMarkers(markers);
 
-            
-    });   
-    // console.log('3',positions)
+
+        // for (let i = 0; i < positions.length; i ++) {
+
+        //     let marker = new kakao.maps.Marker({
+        //         position: new kakao.maps.LatLng(positions[i].lat, positions[i].lng), // 마커를 표시할 위치
+        //         title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+        //     });   
+
+        //     marker.setMap(map)
+        // }
+    });     
 }
+
 
 
 for(let i = 0; i <= parseData.length; i++) {
