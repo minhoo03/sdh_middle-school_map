@@ -24,9 +24,7 @@ const setMarker_data = (address, address_name) => {
     let data = {
             "positions": [
             {
-                title: '서울 디지텍 고등학교', 
-                lat: 37.538921,
-                lng: 126.990606
+              
             }
         ]
     }
@@ -47,6 +45,7 @@ const setMarker_data = (address, address_name) => {
 
         var markers = data.positions.map(function(address) {
             return new kakao.maps.Marker({
+                title: address_name,
                 position : new kakao.maps.LatLng(address.lat, address.lng)
             });
         });
