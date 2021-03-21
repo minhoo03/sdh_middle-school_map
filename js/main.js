@@ -1,14 +1,17 @@
-const asd = async() => {
+var parseData = JSON.parse(JSON.stringify(Params));
+// console.log(parseData[0].주소)
+
+var address_parseData = parseData[0].주소
+
+const mainMap = () => {
 
 let mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = {
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 6 // 지도의 확대 레벨
+        level: 8 // 지도의 확대 레벨
     };  
     // 37.591203, 127.086295
 let map = new kakao.maps.Map(mapContainer, mapOption); 
-
-
 
 
 
@@ -35,14 +38,13 @@ let positions = [
 
 let geocoder = new kakao.maps.services.Geocoder();
 
-await geocoder.addressSearch('중랑구', function(result, status) {
+geocoder.addressSearch(address_parseData, function(result, status) {
     console.log('1',result[0].x)
-
 
         let coords = new kakao.maps.LatLng(result[0].y, result[0].x);
         console.log('2',coords)
         positions.push({
-            title: '검색',
+            title: result[0].address_name,
             latlng: coords
         })
 
@@ -62,4 +64,4 @@ await geocoder.addressSearch('중랑구', function(result, status) {
 console.log('3',positions)
 
 }
-asd()
+mainMap()
