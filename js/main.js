@@ -76,19 +76,7 @@ const setMarker_data = (address, address_name, teachers, selected_teachers) => {
             lng: result[0].x
             // latlng: coords
         })
-  
-        
-        
 
-        // for (let i = 0; i < positions.length; i ++) {
-
-        //     let marker = new kakao.maps.Marker({
-        //         position: new kakao.maps.LatLng(positions[i].lat, positions[i].lng), // 마커를 표시할 위치
-        //         title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        //     });   
-
-        //     marker.setMap(map)
-        // }
     }); 
         
 }
@@ -102,48 +90,12 @@ function myFunction (val) {
     clusterer.clear()
 
     for(let i = 0; i <= parseData.length; i++) {
-        address_parseData = parseData[i].주소
-        address_name_parseData = parseData[i].중학교명
-        teachers_parseData = parseData[i].홍보교사
-    
-        setMarker_data(address_parseData ,address_name_parseData, teachers_parseData, selected_teachers+"선생님")
-    }
-    
-}
-
-const setMarker_data2 = (address, address_name, teachers) => {
-
-    geocoder = new kakao.maps.services.Geocoder();
-
-    geocoder.addressSearch(address, function(result, status) {
-    
-    
-        data.positions.push({
-            title: address_name,
-            teachers: teachers,
-            lat: result[0].y,
-            lng: result[0].x
-        })
-
-
-        markers = data.positions.map(function(address) {
-            return new kakao.maps.Marker({
-                title: address_name,
-                teachers: teachers,
-                position : new kakao.maps.LatLng(address.lat, address.lng)
-            });
-        });
-
-
-        clusterer.addMarkers(markers)
-
-        data.positions.pop({
-            title: address_name,
-            teachers: teachers,
-            lat: result[0].y,
-            lng: result[0].x
-        })
-  
-    }); 
+        for(let x = 1; x <= parseData[i].학생수; x++) {
+            address_parseData = parseData[i].주소
+            address_name_parseData = parseData[i].중학교명
+            teachers_parseData = parseData[i].홍보교사
         
+            setMarker_data(address_parseData ,address_name_parseData, teachers_parseData, selected_teachers+"선생님")    
+        }
+    }
 }
