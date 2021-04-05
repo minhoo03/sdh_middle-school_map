@@ -34,6 +34,8 @@ body {
 }
 
 .menu_box {
+    overflow-y: auto;
+    overflow-x: hidden;
     left: -400px;
     position: fixed;
     width: 400px;
