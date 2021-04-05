@@ -1,10 +1,192 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 html,
 body {
+    overflow: hidden;
     width: 100%;
     height: 100%;
 }
+
+.open_menu1,
+.open_menu2 {
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px;
+    color: rgb(150, 148, 148);
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    background: #fff;
+    border: 1px solid rgb(218, 211, 211);
+    font-size: 12px;
+}
+
+.open_menu2 {
+    display: none;
+}
+
+.menu_box {
+    left: -400px;
+    position: fixed;
+    width: 400px;
+    height: 100vh;
+    background: rgb(241, 240, 240);
+    z-index: 999;
+
+    transition: 0.3s ease-in-out;
+}
+
+.sub_menu {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    background: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(233, 230, 230);
+    border-top: 1px solid rgb(233, 230, 230);
+    margin-bottom: 10px;
+    padding: 16px;
+}
+
+.mid_school {
+    height: 60px;
+}
+
+.mid_school img {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.subway {
+    height: 300px;
+}
+
+.subway_box {
+    display: flex;
+    flex-direction: column;
+}
+.subway_box {
+    width: 100%;
+    height: calc(90% / 3);
+    margin-top: 2px;
+    border-bottom: 1px solid #ccc;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.subway_box:last-child {
+    border-bottom: none;
+}
+
+.subway_box h4 {
+    margin-top: 25px;
+    width: 100px;
+    height: 35px;
+    color: #000;
+    line-height: 35px;
+    color: #fff;
+    margin-right: 12px;
+}
+
+.nok {
+    text-align: center;
+    background: rgb(172, 74, 18);
+}
+
+.young {
+    text-align: center;
+    background: rgb(39, 39, 173);
+}
+
+.sam {
+    text-align: center;
+    background: rgb(45, 160, 226);
+}
+
+.y03 {
+    text-align: center;
+    background: rgb(36, 209, 36);
+}
+
+.dobo {
+    text-align: center;
+    background: rgb(179, 176, 176);
+}
+
+.box {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 20px;
+    height: 70px;
+}
+
+button {
+    font-weight: bold;
+    margin-top: 5px;
+    width: 65px;
+    height: 65px;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+button:focus {
+    outline: none;
+}
+
+.all {
+    background: rgb(80, 80, 80);
+    color: #fff;
+}
+
+.n {
+    background: rgb(255, 123, 0);
+    color: #fff;
+}
+
+.teacher {
+    background: rgb(25, 185, 25);
+    color: #fff;
+}
+
+.delete {
+    background: rgb(0, 0, 0);
+    color: #fff;
+}
+
+.hiddenBox {
+    display: none;
+}
+
+.hiddenBox2 {
+    display: none;
+}
+
+/* .menu_box::after{
+    cursor: pointer;
+    text-align: center;
+    line-height: 100px;
+    color: rgb(150, 148, 148);
+    content: '▶';
+    width: 20px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+    background: #fff;
+    border: 1px solid rgb(218, 211, 211);
+    box-shadow: 10px 5px 15px rgb(167, 167, 167);
+}  */
