@@ -12,67 +12,70 @@
 <body>
 
 <div class="menu_box">
-    <div class="open_menu1" onclick="open_menu_box1()">▶</div>
-    <div class="open_menu2" onclick="open_menu_box2()">◀</div>
-
-    <div class="sub_menu mid_school">
-        <h3>출신 중학교 정보 보기</h3>
-        <img src="./dt.jfif" alt="digit">
+    <div class="menu_overflow">
+        <div class="open_menu1" onclick="open_menu_box1()">▶</div>
+        <div class="open_menu2" onclick="open_menu_box2()">◀</div>
+    
+        <div class="sub_menu mid_school">
+            <h3>출신 중학교 정보 보기</h3>
+            <img src="./dt.jfif" alt="digit">
+        </div>
+    
+        <div class="sub_menu subway">
+            <h3>교통정보</h3>
+    
+            <div class="subway_box">
+                <h4 class="nok">녹사평역</h4>
+                <h4 class="dobo">도보 약 15분</h4>
+            </div>
+            <div class="subway_box">
+                <h4 class="young">용산역</h4>
+                <h4 class="y03">용산03버스</h4>
+                <h4 class="dobo">도보 약 2분</h4>
+            </div>
+            <div class="subway_box">
+                <h4 class="sam">삼각지역</h4>
+                <h4 class="y03">용산03버스</h4>
+                <h4 class="dobo">도보 약 2분</h4>
+            </div>
+        </div>
+    
+        <div class="sub_menu">
+            <h3>데이터 보기</h3>
+    
+            <div class="box">
+                <button class="all" value="전체" onclick="myFunction(this.value)">전체</button>
+                <button class="n" value="접기" onclick="openBox()" >n명 이상</button>
+                <button class="teacher" onclick="openBox2()" >선생님들</button>
+                <button class="delete" value="제거" onclick="myFunction(this.value)">제거</button>
+            </div>
+        </div>
+    
+        <div class="sub_menu hiddenBox">
+            <h3>
+                n명이상
+            </h3>
+            <div class="box">
+                <button value="3명이상" onclick="myFunction(this.value)">3명이상</button>
+                <button value="5명이상" onclick="myFunction(this.value)">5명이상</button>
+                <button value="7명이상" onclick="myFunction(this.value)">7명이상</button>
+                <button value="9명이상" onclick="myFunction(this.value)">9명이상</button>
+            </div>
+        </div>
+    
+        <div class="sub_menu hiddenBox2">
+            <h3>
+                선생님들
+            </h3>
+            <div class="box">
+                <button value="지용배" onclick="myFunction(this.value)">지용배</button>
+                <button value="송창용" onclick="myFunction(this.value)">송창용</button>
+                <button value="권성현" onclick="myFunction(this.value)">권성현</button>
+                <button value="김도형" onclick="myFunction(this.value)">김도형</button>
+            </div>
+        </div>
     </div>
-
-    <div class="sub_menu subway">
-        <h3>교통정보</h3>
-
-        <div class="subway_box">
-            <h4 class="nok">녹사평역</h4>
-            <h4 class="dobo">도보 약 15분</h4>
-        </div>
-        <div class="subway_box">
-            <h4 class="young">용산역</h4>
-            <h4 class="y03">용산03버스</h4>
-            <h4 class="dobo">도보 약 2분</h4>
-        </div>
-        <div class="subway_box">
-            <h4 class="sam">삼각지역</h4>
-            <h4 class="y03">용산03버스</h4>
-            <h4 class="dobo">도보 약 2분</h4>
-        </div>
-    </div>
-
-    <div class="sub_menu">
-        <h3>데이터 보기</h3>
-
-        <div class="box">
-            <button class="all" value="전체" onclick="myFunction(this.value)">전체</button>
-            <button class="n" value="접기" onclick="openBox()" >n명 이상</button>
-            <button class="teacher" onclick="openBox2()" >선생님들</button>
-            <button class="delete" value="제거" onclick="myFunction(this.value)">제거</button>
-        </div>
-    </div>
-
-    <div class="sub_menu hiddenBox">
-        <h3>
-            n명이상
-        </h3>
-        <div class="box">
-            <button value="3명이상" onclick="myFunction(this.value)">3명이상</button>
-            <button value="5명이상" onclick="myFunction(this.value)">5명이상</button>
-            <button value="7명이상" onclick="myFunction(this.value)">7명이상</button>
-            <button value="9명이상" onclick="myFunction(this.value)">9명이상</button>
-        </div>
-    </div>
-
-    <div class="sub_menu hiddenBox2">
-        <h3>
-            선생님들
-        </h3>
-        <div class="box">
-            <button value="지용배" onclick="myFunction(this.value)">지용배</button>
-            <button value="송창용" onclick="myFunction(this.value)">송창용</button>
-            <button value="권성현" onclick="myFunction(this.value)">권성현</button>
-            <button value="김도형" onclick="myFunction(this.value)">김도형</button>
-        </div>
-    </div>
+    
 </div>
 
 <div id="map" style="width:100%; height:100%;"></div>
