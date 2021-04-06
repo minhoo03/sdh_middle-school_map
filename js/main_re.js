@@ -63,12 +63,14 @@ const setMarker_data = (address, address_name, teachers, selected_teachers, stud
 
         markers = data.positions.map(function(address) {
             return new kakao.maps.Marker({
-                title: address_name+', \n전체학생: '+student+"명, \n2018년도: "+p2018+"명, \n2019년도: "+p2019+"명, \n2020년도: "+p2020+"명, \n2021년도: "+p2021+"명",
+                title: address_name+' \n전체학생: '+student+"명 \n2018년도: "+p2018+"명 \n2019년도: "+p2019+"명 \n2020년도: "+p2020+"명 \n2021년도: "+p2021+"명",
                 teachers,
                 student,
                 position : new kakao.maps.LatLng(address.lat, address.lng)
             });
         });
+
+
 
         switch(selected_teachers) {
             case "전체선생님" :
@@ -112,7 +114,7 @@ const setMarker_data = (address, address_name, teachers, selected_teachers, stud
                 }
                 break;
         }
-
+        
         data.positions.pop({
             title: address_name,
             teachers: teachers,
